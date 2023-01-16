@@ -15,17 +15,19 @@ window.onload = function(){
       
       var tamanhoDaPeca = 10;
       
-      var quantidadeDePeca = 37;
+      var quantidadeDePeca = 35;
       
+      var gameOver = document.getElementById('game-over');
+      gameOver.style.display = "none";
       
       var rastro = []; 
       tail = 5;
       
       var meuGame = () => {
         
-        canvas.width = window.innerWidth = 370;
+        canvas.width = window.innerWidth = 350;
        
-        canvas.height = window.innerHeight = 370;
+        canvas.height = window.innerHeight = 350;
         canvas.style.background = "black";
         
         canvas.style.border = "1px solid white";
@@ -97,5 +99,3 @@ window.onload = function(){
 
       setInterval(meuGame, 90)
     }
-
-
