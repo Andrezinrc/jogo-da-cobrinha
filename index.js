@@ -17,20 +17,25 @@ window.onload = function(){
       
       var quantidadeDePeca = 35;
       
-      var gameOver = document.getElementById('game-over');
-      gameOver.style.display = "none";
+      var velocidadeInicial = 80
+      
+      var peca = 5
       
       var rastro = []; 
       tail = 5;
+      
+      var corCanvas = document.getElementById("responsivo")
+      corCanvas.classList.toggle("fundoCanvas")
       
       var meuGame = () => {
         
         canvas.width = window.innerWidth = 350;
        
         canvas.height = window.innerHeight = 350;
-        canvas.style.background = "black";
         
         canvas.style.border = "1px solid white";
+        
+        canvas.style.background = "black";
         
         posX += velX;
         posY += velY;
@@ -57,9 +62,11 @@ window.onload = function(){
           ctx.fillRect(rastro[i].x*tamanhoDaPeca,rastro[i].y*tamanhoDaPeca,tamanhoDaPeca -1,tamanhoDaPeca -1)
           if(rastro[i].x == posX && rastro[i].y == posY){
             velX = velY = 0
-            tail = 5;
+            tail = 5
+            document.getElementById("quantidade").innerHTML = peca = 5
           }
         }
+    
         rastro.push({
           x: posX,
           y: posY
@@ -68,34 +75,42 @@ window.onload = function(){
           rastro.shift()
         }
         if(macaX == posX && macaY == posY){
-          tail++;
+          tail++
           macaX = Math.floor(Math.random()*quantidadeDePeca)
           macaY = Math.floor(Math.random()*quantidadeDePeca)
+          document.getElementById("quantidade").innerHTML = peca = tail;
         }
+        
       }
+    
       document.querySelector("#cima").addEventListener('click', () => {
         
         velY = -velocidade
         velX = 0
-      })
+      }, false)
       
       document.querySelector("#baixo").addEventListener('click', () => {
         
         velY = velocidade
         velX = 0
-      })
+      }, false)
 
       document.querySelector("#esquerda").addEventListener('click', () => {
         
         velX = -velocidade
         velY = 0
-      })
+      }, false)
       
       document.querySelector("#direita").addEventListener('click', () => {
         
         velX = velocidade
         velY = 0
-      })
-
-      setInterval(meuGame, 90)
+      }, false)
+;
+      if(tail == 8){
+        setInterval(meuGame, velocidadeInicial = 50)
+      }else{
+        setInterval(meuGame, velocidadeInicial)
+      }
+      
     }
