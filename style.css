@@ -1,13 +1,14 @@
     *{
         margin: 0;
         padding: 0;
+        font-family: sans-serif;
      }
       canvas{
         position: relative;
         left: 11px;
       }
       body{
-        background-color: mediumpurple;
+        background-color: black;
       }
       html, body {
         min-height: 100%;
@@ -25,12 +26,12 @@
         text-decoration: underline;
       }
       .botoes{
+        width: 350px;
+        height: 168px;
+        background-color: black;
+        border: 1px solid white;
         position: relative;
         left: 11px;
-        width: 350px;
-        height: 150px;
-        background-color: midnightblue;
-        border: 1px solid white;
       }
       .controle{
         text-align: center;
@@ -39,10 +40,9 @@
         position: relative;
       }
       #cima{
-        width: 70px;
-        height: 70px;
+        width: 80px;
+        height: 80px;
         background-color: limegreen;
-        border: 2px solid black;
         font-size: 50px;
         display: flex;
         justify-content: center;
@@ -53,31 +53,29 @@
       #cima:hover{
         background-color: blue;
         border-radius: 50%;
-        border: 2px solid black;
       }
       #baixo{
-        width: 70px;
-        height: 70px;
+        width: 80px;
+        height: 80px;
         background-color: red;
         font-size: 50px;
-        border: 2px solid black;
         display: flex;
         justify-content: center;
         align-items: center;
         animation: tremer .2s;
         animation-iteration-count: 4;
+        position: relative;
+        top: 8px;
       }
       #baixo:hover{
         background-color: orangered;
         border-radius: 50%;
-        border: 2px solid black;
       }
       #esquerda{
         width: 80px;
         height: 80px;
         background-color: yellow;
         font-size: 50px;
-        border: 2px solid black;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -91,33 +89,34 @@
         background-color: skyblue;
         
         border-radius: 50%;
-        border: 2px solid black;
       }
       #direita{
         width: 80px;
         height: 80px;
         background-color: magenta;
         font-size: 50px;
-        border: 2px solid black;
         display: flex;
         justify-content: center;
         align-items: center;
         position: relative;
-        left: 245px;
-        top: -199px;
+        left: 230px;
+        top: -195px;
         animation: tremer .2s;
         animation-iteration-count: 4;
       }
       #direita:hover{
         background-color: darkmagenta;
         border-radius: 50%;
-        border: 2px solid black;
       }
       
+      .fundoCanvas{
+        background-color: orange;
+        z-index: 4;
+      }
       @keyframes tremer {
         0% {margin-left: 0;}
-        25% {margin-left: 7px;}
+        25% {margin-left: 5px;}
         50% {margin-left: 0;}
-        75% {margin-left: -7px;}
+        75% {margin-left: -5px;}
         100% {margin-left: 0;}
       }
